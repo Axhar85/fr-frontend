@@ -30,7 +30,10 @@ function App() {
       {
         if(response.status === 201){
           fetch('http://localhost:5000/students')
-      getStudents().then(data => setData(data))
+      getStudents().then(data => {
+        setData(data)
+        setUser('')
+          })
         }
 
       })

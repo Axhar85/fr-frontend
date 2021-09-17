@@ -1,15 +1,18 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
 
+const getStudents = () => (
+  fetch('http://localhost:5000/students')
+      .then(response => response.json())
+)
+
 function App() {
 
   let [data, setData]= useState([])
   let [user, setUser]= useState('')
 
   useEffect(() => {
-    fetch('http://localhost:5000/students')
-      .then(response => response.json())
-      .then(data => setData(data))
+      getStudents().then(data => setData(data))
   }, [])
 
   const handleForm = (event) => {
@@ -23,6 +26,14 @@ function App() {
         user: user
       })
     })
+    .then(response => 
+      {
+        if(response.status === 201){
+          fetch('http://localhost:5000/students')
+      getStudents().then(data => setData(data))
+        }
+
+      })
   }
 
   return (

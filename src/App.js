@@ -52,7 +52,7 @@ function App() {
       <h3>List of students</h3>
       {
         data.map((student, index) => (
-          <p key={index}>{student.user}</p>
+          <p key={index}>{student.user}🎓</p>
         ))
       }
     </div>

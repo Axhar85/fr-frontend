@@ -1,3 +1,5 @@
+Creating a fullstack app. Its front end park connected with back end. Where you can add or rtrieve data. Where backend part is connected with mySQL and postman. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
